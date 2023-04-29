@@ -7,6 +7,7 @@ import Pagination from '../../components/Pagination/Pagination';
 import Loading from "../Loading/Loading";
 
 const CardsContainer = () => {
+    
     const dispatch = useDispatch();
     const {dogs, loading} = useSelector(state => state);
     
@@ -26,7 +27,7 @@ const CardsContainer = () => {
     useEffect(() => {
         dispatch(getDogs());
         dispatch(getTemperaments());
-    }, []);
+    }, [dispatch]);
 
     return(
         <div>
