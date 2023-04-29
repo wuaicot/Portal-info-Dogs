@@ -1,0 +1,27 @@
+.header{
+    display: inline;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.tittle {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3em;
+    font-weight:  600;  
+    text-shadow: 2px 2px 7px #fff;
+   border-style: groove;
+   margin: 15px;
+   
+}
+
+.buttons{
+    display: inline;
+    justify-content: center;
+    
+}
+
+
+.select{
+    display: flex;
+    justify-content: center;
+}

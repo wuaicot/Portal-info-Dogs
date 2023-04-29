@@ -1,0 +1,23 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid black;
+    background-color: black;
+    color:#fff;
+    opacity: 0.8;
+    padding: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    font-weight: 100;
+  }
+  
+  .mainContainer a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .mainContainer a:hover {
+    color:  darkorange;
+  }
+  

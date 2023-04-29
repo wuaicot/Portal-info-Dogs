@@ -1,0 +1,14 @@
+.select{
+    border-radius: 6px;
+    height: 30px;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    margin: 5px;
+}
+
+.select:hover{
+    background-color: black;
+    opacity: 2;
+    font-weight: 600;
+}

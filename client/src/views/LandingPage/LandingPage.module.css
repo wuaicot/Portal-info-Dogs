@@ -1,0 +1,65 @@
+*{
+    background: #888843;
+    justify-content: center;
+} 
+.tittle {
+    
+    line-height: 25px;
+    width: 100%;
+    top: 150px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
+    color: #888843;
+    font-size: 4.5em;
+    font-weight: 10px;
+    /* text-shadow: 12px 2px 7px 5px #ba1717; */
+    background-image: url(https://media.istockphoto.com/id/490822976/es/foto/blanco-y-negro-pata-de-perro-imprime-patr%C3%B3n-de-repetici%C3%B3n-de-fondo-de-azulejos.jpg?s=612x612&w=0&k=20&c=TDBqJopRrieMnVd1-hVszn-oEpx1j497-458b7uChi0=) ;
+    
+}
+
+
+/* .button{
+   position: relative;
+   top: -40px;
+    padding: 15px;
+    font-size: medium;
+    background-color: #fcfc00;
+    opacity:0.8;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.button:hover{
+    background-color: #866e6e;
+} */
+
+.imageContainer {
+    position: absolute;
+   left: 70px;
+    display: flex;
+    width: 90%;
+    height: 400px;    
+    /* background-color: #000; */
+    
+    align-items:flex-start;
+}
+
+.imageContainer img{
+    width: 0px;   
+    flex-grow: 1; /*hace flexible la caja y se adapta a la resolucion, salvo q use flex wrap y ahi se ponen abajo  */ 
+     object-fit: cover;
+     opacity: 1;
+     transition: 1.3s ease;
+     box-shadow: 0px 4px 15px transparent;
+     border-radius: 5%;
+     
+
+}
+ .imageContainer img:hover{
+    cursor:  pointer;
+    width: 100px;
+    opacity: 1;
+    filter: contrast(120%);
+    filter: drop-shadow(10px 10px 50px  #000);
+}

@@ -1,0 +1,23 @@
+.container{
+    color:white;
+    position:relative;
+    margin-top:40px ;
+    background: rgba(6, 6, 8, 0.8);
+    border-radius:1em;
+    display: inline-block;
+    padding: 2em;
+    
+}
+.titulo{  
+/* font-size:xx-large; */
+margin-top:-20px;
+text-shadow: 2px 2px 5px #999;
+font-weight: 500;
+
+}
+.p{
+font-size:medium;
+margin: 10px;
+
+}
+    
