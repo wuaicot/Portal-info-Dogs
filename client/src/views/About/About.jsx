@@ -27,7 +27,7 @@ const About = () => {
 
             <h1 className={style.titulo}>PORTAL INFO-DOGS by Naycol R. Linares V</h1>
             <p className={style.p} >Henry Academy - Individual Project: React, Redux, Node, Express y Sequelize. <br></br></p>
-            <p>Este es mi proyecto personal para el BootcampHenry Development Fullstack, el cual consiste en desarrollar un info-porál utilizando la API de **TheDogApi**. Podrás realizar búsquedas, crear, filtrar y ordenar tus videojuegos favoritos.</p>
+            <p>Este es mi proyecto personal para el BootcampHenry Development Fullstack, el cual consiste en desarrollar un info-porál utilizando la API de **TheDogApi**. Podrás realizar búsquedas, crear, filtrar y ordenar tus raza de Perros favoritos.</p>
 
             <h2 className={style.p}>Follow me:
             <div style={{fontSize:'1.5em', color: 'white', position:'absolute', display:'inline-block', marginLeft: '0.5em', marginTop:'-0.2em'}}>

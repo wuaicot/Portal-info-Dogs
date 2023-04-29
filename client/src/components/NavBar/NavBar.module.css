@@ -1,9 +1,13 @@
 .mainContainer {
+
+     margin-top: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     border: 1px solid black;
-    background-color: black;
+    border-radius: 15px;
+    border-style:groove;
+    background: linear-gradient(to right, #ebbf60, #5c9fc1);
     color:#fff;
     opacity: 0.8;
     padding: 10px;
@@ -13,11 +17,12 @@
   }
   
   .mainContainer a {
-    color: white;
+    color: black;
     text-decoration: none;
   }
   
   .mainContainer a:hover {
-    color:  darkorange;
+    color:  #04df33;
+    transition: 0.3s;
   }
-  
+  /*#ebbf60  #5c9fc1*/

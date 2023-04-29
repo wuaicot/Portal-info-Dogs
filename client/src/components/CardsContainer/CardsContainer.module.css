@@ -1,9 +1,11 @@
 .container{
+    background: linear-gradient(to right, #ebbf60, #5c9fc1);
     border: 1px solid black;
+    border-style: groove;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    border-radius: 15px;
+    border-radius: 23px;
     z-index: 0;
     position: relative;
 }

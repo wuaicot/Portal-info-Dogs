@@ -18,11 +18,17 @@ const SearchBar =()=>{
 
     return(
         <div>
+
+           <div className={style.inputcontainer}>
             
-            <input placeholder='Dog breed name...' type='search'className={style.input} value={name} onChange={handlerChange}></input> 
-            <button className={style.button} onClick={handlerOnClick}>Look for it !</button>    
+            <input placeholder='Escriba Aqui...' type='search'className={style.input} value={name} onChange={handlerChange}></input> 
+            <button className={style.button} onClick={handlerOnClick}>BUSCAR</button>    
+          </div>
+               
         </div>
+       
     )
 }
 
 export default SearchBar;
+//className={style.inputcontainer}

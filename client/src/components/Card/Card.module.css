@@ -1,6 +1,7 @@
+/*contenedor de las cadrs en el home*/
 .card {
-    background-color: black;
-    color:#fff;
+    background-color: #7a7a416e;
+    color:blue;
     opacity: 0.8;
     display: block;
 
@@ -19,8 +20,8 @@
   }
   
   .card:hover{
-    background-color: black;
-    opacity: 0.92;
+    background-color: rgba(0, 0, 0, 0.297);
+    opacity: 0.9;
     
     
   }
@@ -51,25 +52,41 @@
 
   .breedName{
     font-size: larger;
-    font-weight: 700;
-    text-decoration: underline;
-    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
   }
   .breedName:hover {
-    color: orange;
-   
+    color: #04df33;
+    text-decoration: none;
     transform: translateY(0);
   }
 
+  /*boton para eliminar la card creada*/
   .buttonX {
-    background-color: darkorange;
-    opacity: 0.7;
-    right: 0;
+    background-color: #5c9fc1;
+    color: red;
+    border: 1px solid black;
+    padding: 12px 16px;
+    font-size: 17px;
+    cursor: pointer;
     position: relative;
-    float: right; /*lo acamoda a la dcha del resto de elem */
-    padding: 3px;
-    position: relative;
-  }
+    float: right;
+    border-radius: 5px;
+}
+.buttonX:hover {
+    background-color: #ebbf60;
+}
+
+@keyframes example {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+.buttonX:hover {
+    animation-name: example;
+    animation-duration: 1s;
+}
 
   .buttonX:hover {
     opacity: 1;

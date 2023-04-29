@@ -12,7 +12,7 @@ const Home = () => {
     return(
         <>
         <div className={style.header}>
-             <h1 className={style.tittle}> BREEDS SEARCH </h1>
+             <h1 className={style.tittle}> BUSCA TU RAZA FAVORITA </h1>
              <div className={style.buttons}>
               <div className={style.search}> 
                  <SearchBar/>

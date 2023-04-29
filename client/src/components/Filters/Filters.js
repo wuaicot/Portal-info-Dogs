@@ -25,22 +25,22 @@ const Filters = ()=>{
         <>
        
                 <select className={style.select} id='sourceSelector' onChange={handlerFilterByCreated}>
-                <option disabled value='filter'>Filter by Source</option>
-                    <option value='all'>All breeds</option>  
-                    <option value='db'>My Dogs</option>
-                    <option value='api'>Api Dogs</option>
+                <option disabled value='filter'>CREADO/API</option>
+                    <option value='all'>Todas las Razas</option>  
+                    <option value='db'>Mis Perros</option>
+                    <option value='api'>Api Perros</option>
                 </select>
 
                 <select  className={style.select}  id='tempSelector'  defaultValue="TEMP" onChange={handlerFilterByTemperament} >
-                <option disabled value='TEMP'>Filter by Temperament</option>
-                    <option value="all">All temperaments</option>
+                <option disabled value='TEMP'>Filtrar Temperamento</option>
+                    <option value="all">Todo Temperamentos</option>
                     {temperaments.map((temp 
                         ) => (
                         <option key={temp.id} value={temp.name}>{temp.name}</option>
                         )
                     )}
                </select>
-               <button className={style.button} onClick={handleClick}>Clean filters</button>      
+               <button className={style.button} onClick={handleClick}>Borrar Filtros</button>      
 
 
 

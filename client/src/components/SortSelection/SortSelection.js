@@ -28,19 +28,19 @@ export default function SortSelection (){
         <div >
             
             <select  className={style.select}   id='alphabeticalSort' name='alphabetical' defaultValue='title' onChange={handleChange}>
-                <option disabled value='title'>Order Alphabetically</option>
+                <option disabled value='title'>Orden Alfabetico</option>
                 <option value='asc'>A-Z</option>
                 <option value='des'>Z-A</option>
             </select>
             <select  className={style.select}  id='weightSort' name='weight' defaultValue='title' onChange={handleChange}>
-                <option disabled  value='title'>Order By weight</option>
-                <option value='asc'>Lightest</option>
-                <option value='des'>Haviest</option>
+                <option disabled  value='title'>Ordenar por Peso</option>
+                <option value='asc'>mas ligero</option>
+                <option value='des'>mas pesado</option>
             </select>
             <select className={style.select} name='height' defaultValue='title' onChange={handleChange}>
-                <option disabled value='title'> Order by height</option>
-                <option value='asc' >Shortest</option>
-                <option value='des'>Tallest</option>
+                <option disabled value='title'> Ordenar por Altura</option>
+                <option value='asc' >mas chico</option>
+                <option value='des'>mas grande</option>
                 </select>
         </div>
     )
