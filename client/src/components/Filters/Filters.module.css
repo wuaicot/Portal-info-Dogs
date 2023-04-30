@@ -1,24 +1,27 @@
 .select{
-    border-radius: 6px;
+    border-radius: 13px;
+    border-style: groove;
     height: 30px;
     background-color: black;
     opacity: 0.8;
     color: white;
     margin: 5px;
 }
-
 .select:hover{
     background-color: black;
-    opacity: 2;
-    font-weight: 600;
+    opacity: 1;
+    font-weight: 500;
 }
+
 .button{
-    border-radius: 6px;
+    border-radius: 6.5px;
+    border-style: groove;
     height: 30px;
     background-color: black;
     opacity: 0.8;
     color: white;
     margin: 4px;
+    padding: 2px;
     border: 4px solid rgb(255, 2, 2);
 }
 .button:hover{

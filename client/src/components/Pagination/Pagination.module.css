@@ -1,13 +1,14 @@
 .pagination{
+    
+    
     height: 70%;
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 5px;
- 
-
+    padding: 20px;
+    
 
 }
 
@@ -20,7 +21,7 @@
     align-items: center;
     justify-content: center;
    font-weight: 800;
-   text-shadow: 1px 1px 1px white, 1px 1px 1px white, 1px 1px 1px white, 1px 1px 1px white, 1px 1px 1px white, 1px 1px 1px white;
+   text-shadow: 1px 1px 1px white, 0px 1px 3px #fcfc00, 1px 1px 1px white, 1px 1px 1px white, 1px 1px 1px white, 1px 1px 1px white;
    
 }
 .page_number:hover {

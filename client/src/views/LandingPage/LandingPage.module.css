@@ -40,8 +40,8 @@ html {
   h4 {
     animation: blink 0.7s linear infinite;
     color: red;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 650;
 
   }
 
@@ -70,6 +70,7 @@ h2 {
     font-weight: bold;
     margin: 10px 0;
     text-align: center;
+    color: rgb(0, 0, 17);
 }
 
 h3 {
@@ -77,6 +78,15 @@ h3 {
     margin: 15px 0;
     text-align: center;
     color: #c82005;
+}
+ 
+ul{
+    color: white;
+    font-size: larger;
+    font-weight: 700;
+    background: linear-gradient(to right, #ebbf60, #5c9fc1, #e06d2d, #a2d08a, #01c580, #f93f57);
+    border-radius: 0px 0px 15% 15%;
+    
 }
 
 .imageContainer {

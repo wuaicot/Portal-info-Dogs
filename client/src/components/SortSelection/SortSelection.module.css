@@ -1,14 +1,16 @@
 .select{
-    border-radius: 6px;
+    border-radius: 13px;
+    border-style: groove;
     height: 30px;
     background-color: black;
     opacity: 0.8;
     color: white;
     margin: 5px;
+    justify-content: center;
 }
-
 .select:hover{
     background-color: black;
     opacity: 2;
     font-weight: 600;
 }
+

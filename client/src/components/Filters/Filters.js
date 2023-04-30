@@ -40,6 +40,7 @@ const Filters = ()=>{
                         )
                     )}
                </select>
+
                <button className={style.button} onClick={handleClick}>Borrar Filtros</button>      
 
 

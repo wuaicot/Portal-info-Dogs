@@ -2,8 +2,7 @@
     
     width: 250PX;
     height: 35px;
-     border-radius: 6px;
-    
+     border-radius: 23px;    
     border: 1px solid black;
     padding: 10px 15px;
     margin: 4px;
@@ -16,11 +15,13 @@
     justify-content:flex-end;
     align-items: center;
     border-radius: 23px;
+    border-style: groove;
 }
 
 .button{
     
-    border-radius: 6px;
+    border-radius: 23px;
+    border-style: groove;
     width:90PX;
     height: 35px;
     background-color: black;
