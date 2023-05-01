@@ -52,10 +52,10 @@ const CardsContainer = () => {
                      image={<img src={dog.image} alt={dog.name} />}
                      temperament={dog.temperaments}
                  />
-             )) : <p style={{color:'black', backgroundColor: 'white', opacity: 0.8, fontWeight: 600}}>No dogs to show, clean filters to continue.</p>}
+             )) : <p style={{color:'white', backgroundColor: 'red', opacity: 0.8, fontWeight: 600}}>No se encontro el pero, Limpie Filtro para continuar.</p>}
        
          </div>  
-            }
+        }
              
         </div>
     );

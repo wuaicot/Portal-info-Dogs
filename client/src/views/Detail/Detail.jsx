@@ -19,13 +19,17 @@ const Detail = () => {
 
  console.log(dog_details);
     return(
+
         <div>
+               
+              
         <h1 className={style.h1}> Exploring Breed </h1>
        { loading ? <Loading/> :
          <div className={style.card}>
-         <Link to='/home'><button className={style.button}> Go back </button></Link>
+         
          <p className={style.breedName}>{dog_details.name}</p>
               <img  className={style.image} src= {dog_details.image} alt={dog_details.name}></img>
+              <Link to='/home'><button className={style.button}> Atrás </button></Link>
               <div className={style.p}>
                  <p>Id: {dog_details.id}</p>             
                  <p>Height: {dog_details.height} cm.</p>
