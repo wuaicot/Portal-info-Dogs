@@ -1,6 +1,6 @@
 .card {
-   background: linear-gradient(to right, #ebbf60, #5c9fc1, #e06d2d, #a2d08a, #01c580, #f93f57);
-   color:#000;
+  background: linear-gradient(to right, #ebbf60, #5c9fc1);
+  color:#000;
    font-weight: 500;
    opacity: 0.9;
     display: block;
