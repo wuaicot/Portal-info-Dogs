@@ -4,6 +4,7 @@
     height: 35px;
      border-radius: 23px;    
     border: 1px solid black;
+    border-style: groove ;
     padding: 10px 15px;
     margin: 4px;
 }
@@ -14,8 +15,7 @@
     /* background-color: rgba(0, 0, 0, 0.053); */
     justify-content:flex-end;
     align-items: center;
-    border-radius: 23px;
-    border-style: groove;
+    
 }
 
 .button{
@@ -24,14 +24,15 @@
     border-style: groove;
     width:90PX;
     height: 35px;
-    background-color: black;
+    background-color: #ff9800;
     opacity: 0.8;
     color: white;
     margin: 15px;
+    cursor: pointer;
 }
 
 .button:hover{
-    background-color: #04df33;
+    background-color: #b6bea3;
     color:black;
     opacity: 1;
 }

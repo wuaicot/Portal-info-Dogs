@@ -22,6 +22,7 @@ const { conn } = require('./src/db.js');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
+  //se define el servidor de Node.js.
   server.listen(3001, () => {
     console.log('%s AURELIO listening at 3001'); // eslint-disable-line no-console
   });

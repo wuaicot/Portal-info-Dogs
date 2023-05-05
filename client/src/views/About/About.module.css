@@ -2,7 +2,7 @@
     color:white;
     position:relative;
     margin-top:40px ;
-    background: rgba(6, 6, 8, 0.8);
+    background: linear-gradient(to right, #ebbf60, #5c9fc1);
     border-radius:1em;
     display: inline-block;
     padding: 2em;
@@ -16,8 +16,36 @@ font-weight: 500;
 
 }
 .p{
-font-size:medium;
-margin: 10px;
+font-size:large;
+
+padding-bottom:13px ;
 
 }
+
+.containI{
+    display: flex;
+   justify-content: space-around;
     
+   
+}
+ 
+.Ilkd{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.Igith{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.Iinst{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.Imeta{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}

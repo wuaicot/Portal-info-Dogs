@@ -1,6 +1,6 @@
 const {getTemperaments} = require ('../controllers/temperamentsControllers');
 
-
+ //obtener todos los temperamentos disponibles en la base de datos y enviarlos como respuesta al cliente.
 const getTemperamentsHandler =  async (req,res)=> {
     try{
       const Alltemperaments = await getTemperaments();

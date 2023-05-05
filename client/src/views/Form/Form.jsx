@@ -199,8 +199,10 @@ const Form = () => {
             </div>
             <div>
                 <label>Temperamento: </label>
-                <select onChange={ e => selectHandler(e)} >
-                <option disabled value='title'>Select Temperament</option>
+
+                <select  onChange={ e => selectHandler(e)} >
+                <option disabled value='title'>Puede elegir mas de uno
+                </option>
                   {temperaments?.map(temp=>{
                     return(
                       <option key={temp.id} value={temp.id}>{temp.name}</option>)                      

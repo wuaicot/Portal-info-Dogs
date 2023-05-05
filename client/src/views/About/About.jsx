@@ -30,11 +30,12 @@ const About = () => {
             <p>Este es mi proyecto personal para el BootcampHenry Development Fullstack, el cual consiste en desarrollar un info-porál utilizando la API de **TheDogApi**. Podrás realizar búsquedas, crear, filtrar y ordenar tus raza de Perros favoritos.</p>
 
             <h2 className={style.p}>Follow me:
-            <div style={{fontSize:'1.5em', color: 'white', position:'absolute', display:'inline-block', marginLeft: '0.5em', marginTop:'-0.2em'}}>
-            <FontAwesomeIcon icon={faLinkedin}onClick={()=>{window.open('https://www.linkedin.com/in/lucia-bellardi-7184481a5/')}}/>{' '}
-            <FontAwesomeIcon icon={faGithub} onClick={()=>{window.open('https://github.com/LuciaBe')}}/>{' '}
-            <FontAwesomeIcon icon={faInstagram} onClick={()=>{window.open('https://www.instagram.com/lubellardi/')}}/>{' '}
-            <FontAwesomeIcon icon={faFacebook} onClick={()=>{window.open('https://www.facebook.com/lu.bellardi')}}/>{' '}
+            
+            <div className={style.containI}>
+            <FontAwesomeIcon  icon={faLinkedin}className={style.Ilkd}onClick={()=>{window.open('https://www.linkedin.com/in/rodolfo-linares-4066b724b/')}}/>{' '}
+            <FontAwesomeIcon icon={faGithub}className={style.Igith} onClick={()=>{window.open('https://github.com/wuaicot')}}/>{' '}
+            <FontAwesomeIcon icon={faInstagram}className={style.Iinst} onClick={()=>{window.open('https://www.instagram.com/holasoymoolly/')}}/>{' '}
+            <FontAwesomeIcon icon={faFacebook}className={style.Imeta} onClick={()=>{window.open('https://www.facebook.com/rodolfo-linares')}}/>{' '}
             </div>
 
             </h2>
