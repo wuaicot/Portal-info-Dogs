@@ -34,7 +34,7 @@ const Landing = () => {
           <br></br>
           <br></br> 
 
-          <div ><h4 className={style.hasclic}>HAS CLIC EN CUALQUIER PERRITO.</h4></div>
+          <div ><h4 className={style.hasclic}>HAS CLIC EN CUALQUIER PERRITO PARA ENTRAR.</h4></div>
 
 
           <Link to="/home" className={style.link}>
