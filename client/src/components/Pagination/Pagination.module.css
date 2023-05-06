@@ -1,6 +1,5 @@
 .pagination{   
-       
-   
+          
     list-style: none;
     display:flex;
     flex-direction: row;
@@ -27,13 +26,16 @@
 .page_number:hover {
     font-weight: bold;
     font-size: 22px;
-    cursor: pointer;
+    border-style: none;
+    
 }
 
 .page_number_current {
+    
     font-weight:bold;
     font-size: 22px;
     color: #0dfc01;
-    background-color: rgb(23, 7, 242);
+    background-color: #ff9800;
+    
     
 }
