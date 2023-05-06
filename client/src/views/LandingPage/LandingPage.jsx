@@ -34,7 +34,7 @@ const Landing = () => {
           <br></br>
           <br></br> 
 
-          <div ><h4 className={style.hasclic}>HAS CLIC EN CUALQUIER PERRITO.</h4></div>
+          <div ><h4 className={style.hasclic}>HAS CLIC EN CUALQUIER PERRITO PARA ENTRAR.</h4></div>
 
 
           <Link to="/home" className={style.link}>
@@ -51,35 +51,7 @@ const Landing = () => {
       );
     
 
-    // return(
-    //     <div>
-           
-    //         <div>
-    //          <h1 className={style.tittle}>PORTAL  DOGS </h1>
-    //          <h1>BIENVENID@</h1>
-    //          <h2>Este es el Portal Info.Dogs y podrás: </h2>
-    //          <h3>|Buscar perros por su raza.</h3>
-    //          <h3>|Visualizar la información de los perros.</h3>
-    //          <h3>|Filtrar y ordenar busqueda.</h3>
-    //          <h3>|Registrar nuevos perros.</h3>
-             
-    //         </div>
-           
-    //         <Link  to='/home'>
-    //         <div className={style.imageContainer}>
-    //             <img src={dog1}alt="perritos"></img>       
-    //             <img src={dog2}alt="perritos"></img>
-    //             <img src={dog3}alt="perritos"></img>
-    //             <img src={dog4}alt="perritos"></img>          
-    //             <img src={dog5}alt="perritos"></img>       
-    //             <img src={dog6}alt="perritos"></img>  
-    //         </div>
-    //         </Link>
-           
-       
-    //     </div>
-        
-    // )
+    
 };
 
 export default Landing;
