@@ -5,8 +5,7 @@ const {API_KEY}=  process.env;
 
 //nos trameos todo en crudo de la API y lo mapeamos para retornar solo lo que queremos
 const cleanArray = (arr) =>
-   arr.map((elem)=>{
-    
+   arr.map((elem)=>{    
     return{
       id: elem.id,
       name: elem.name,
@@ -28,26 +27,26 @@ const cleanArray = (arr) =>
       return { ...rest, temperaments: temperamentString };
     });
   }
-  //buscamos todos los perros de la bdd y API
+     //buscamos todos los perros de la bdd y API
   const getAllDogs = async () => {
     const dbDogsRaw = await Dogs.findAll({include: {model: Temperaments, attributes: ['name'],  through: { attributes: [] }}});
 
     const apiDogsRaw = (await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)).data
-    //transformamos y devolvemos un array
+      //transformamos y devolvemos un array
     const apiDogs = cleanArray(apiDogsRaw);
     const dbDogs = transformedDogs(dbDogsRaw);
   
     return [...dbDogs,...apiDogs];
   }
 
-//* GET | /dogs name : //depende d la cadena de texto que se proporcione buscamos por nombre
-const searchDogByName = async (name) => {
-  const dbDogsRaw = await Dogs.findAll({
-    where: { name: { [Op.iLike]: `%${name}%` } },
-    include: {
-      model: Temperaments,
-      attributes: ['name'],
-      through: { attributes: [] },
+     //* GET | /dogs name : //depende d la cadena de texto que se proporcione buscamos por nombre
+      const searchDogByName = async (name) => {
+      const dbDogsRaw = await Dogs.findAll({
+       where: { name: { [Op.iLike]: `%${name}%` } },
+       include: {
+       model: Temperaments,
+       attributes: ['name'],
+       through: { attributes: [] },
     },
   });
    //buscamos los perros x nombre correspondientes de la API

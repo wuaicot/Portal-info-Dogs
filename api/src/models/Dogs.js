@@ -3,6 +3,7 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   
   sequelize.define('Dogs', {
+
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
@@ -33,6 +34,9 @@ module.exports = (sequelize) => {
       defaultValue: true,
     },
   },
+
     {timestamps: false} 
+
   );
+  
 };
