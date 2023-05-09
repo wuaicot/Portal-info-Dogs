@@ -1,19 +1,22 @@
 import React, { useEffect, useCallback } from "react";
 import style from "./Pagination.module.css";
 
-export default function Pagination({
-  pagination,
-  dogsPerPage,
-  dogsLength,
-  currentPage,
-}) {
-  let pageQnty = Math.ceil(dogsLength / dogsPerPage);
-  const pageNumbers = [];
 
+ //difinimos componente
+export default function Pagination({
+  //le pasamos los props
+  pagination,//actualiza al numero que el usuario elija
+  dogsPerPage,//perro x pag.
+  dogsLength,//total de perros
+  currentPage,//el numero de la pag. actual
+}) {//calculamos la cant. de pag. que nesecitamos para mostar todos los perros
+  let pageQnty = Math.ceil(dogsLength / dogsPerPage);
+  //creamos un array que contiene los números de página del 1 al número total de páginas.
+  const pageNumbers = [];
   for (let i = 1; i <= pageQnty; i++) {
     pageNumbers.push(i);
   }
-
+  
   const prevPage = useCallback(
     (page) => {
       if (page !== 1) pagination(page - 1);
@@ -27,7 +30,7 @@ export default function Pagination({
     },
     [pagination, pageQnty]
   );
-
+   //detectmosa una de estas teclas, se llama a la función de tecla < ó > respectivamente.
   useEffect(() => {
     const handleKey = (event) => {
       if (event.keyCode === 37) prevPage(currentPage);
@@ -42,10 +45,15 @@ export default function Pagination({
     <nav>
       <div className={style.pagination}>
         <span className={style.page_number}>
-          <button onClick={() => pagination(1)}>{"<<"}</button>
+          <button 
+          onClick={() => pagination(1)}>{"<<"}
+          </button>
         </span>
+
         <span className={style.page_number}>
-          <button onClick={() => prevPage(currentPage)}>{"<"}</button>
+          <button 
+          onClick={() => prevPage(currentPage)}>{"<"}
+          </button>
         </span>
         {pageNumbers &&
           pageNumbers.map((page) => (
@@ -57,14 +65,20 @@ export default function Pagination({
               }
               key={page}
             >
-              <button onClick={() => pagination(page)}>{page}</button>
+              <button 
+              onClick={() => pagination(page)}>{page}
+              </button>
             </span>
           ))}
         <span className={style.page_number}>
-          <button onClick={() => nextPage(currentPage)}>{">"}</button>
+          <button 
+          onClick={() => nextPage(currentPage)}>{">"}
+          </button>
         </span>
         <span className={style.page_number}>
-          <button onClick={() => pagination(pageQnty)}>{">>"}</button>
+          <button
+           onClick={() => pagination(pageQnty)}>{">>"}
+           </button>
         </span>
       </div>
     </nav>

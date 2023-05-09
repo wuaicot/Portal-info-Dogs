@@ -6,31 +6,34 @@ import { useDispatch, useSelector } from 'react-redux';
 const Filters = ()=>{
     const dispatch = useDispatch();  
     const {temperaments } = useSelector((state)=> state)
-   
-    function handlerFilterByTemperament(e) {      
+     //filtramos perros segun temperamento elejido
+    function handlerFilterByTemperament(e){      
         dispatch(filterByTemperaments(e.target.value)); 
       }
-      
+      // filtramos según origen BDD/API.
      function handlerFilterByCreated(e) {
         dispatch(filterBySource(e.target.value));
      }
-
+        //borramos filtros y que se muestren todos los perros
      function handleClick(){
         document.getElementById('sourceSelector').value='all';
         document.getElementById('tempSelector').value='all';
         dispatch(removeFilters());
     }
 
+
+    //renderizamos dos selectores y un botón
     return(
+
         <>
-       
+    
                 <select className={style.select} id='sourceSelector' onChange={handlerFilterByCreated}>
                 <option disabled value='filter'>CREADO/API</option>
-                    <option value='all'>Todas las Razas</option>  
-                    <option value='db'>Mis Perros</option>
-                    <option value='api'>Api Perros</option>
+                    <option value='all'>Todas Razas</option>  
+                    <option value='db'>BDD</option>
+                    <option value='api'>API</option>
                 </select>
-
+            
                 <select  className={style.select}  id='tempSelector'  defaultValue="TEMP" onChange={handlerFilterByTemperament} >
                 <option disabled value='TEMP'>Filtrar Temperamento</option>
                     <option value="all">Todo Temperamentos</option>

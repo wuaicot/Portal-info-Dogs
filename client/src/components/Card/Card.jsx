@@ -22,8 +22,10 @@ const Card = (props) => {
             <div>
             {isNaN(props.id) && <button onClick={onClose} className={style.buttonX}>X</button> }             
             </div>
+            
             <div className={style.p}>
-               <Link to={`/dogs/${props.id}`}><p className={style.breedName}> {props.name}</p></Link>  
+               <Link to={`/dogs/${props.id}`}><p className={style.breedName}> {props.name}</p>
+               </Link>  
                  <p>Weight: {props.weight} Kgs.</p>
                 {props.temperament &&  <p>Temperament: {props.temperament}</p>}                
             </div>
