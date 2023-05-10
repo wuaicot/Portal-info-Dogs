@@ -1,14 +1,30 @@
 /api
 /node_modules
 src/
-  / controllers
-   /handlers
-   /middlewares
-   /models
-   /routes
+  controllers/
+  dogsConterollers.js
+  temperamentControllers.js
+   handlers/
+   DogsHandler.js
+   TemperamentHandler.js
+   middlewares/
+   validate.js
+   models/
+   Dog.js
+   Dogs.js
+   Temperaments.js
+   routes/
+   dogsRouter.js
+   index.js
+   temperamentsRouter.js
+
    app.js
    db.js
- / tests
+  tests/
+  models/
+  dig.spec.js
+  routes/
+  dog.spec.js
   .env
  .eslintrc.json
  .npmrc
@@ -20,16 +36,35 @@ client/
 /node_modules
 /public
 src/
-   components/
- /Card
-  /CardsContainer
-  /Filters
-  /Loading
-  /NavBar
-  /Pagination
-  /SearchBar
-  /SortSelection
-   /redux
+   components/   
+  Card/
+Card.jsx
+   Card.module.css
+  CardsContainer/
+  CardsContainer.jsx
+  CardsContainer.module.css
+  Filters/
+  Filters.js
+  Filters.module.css
+  Loading/
+  Loading.jsx
+  Loading.module.css
+   NavBar/
+   NavBar.jsx
+   NavBar.module.css
+  Pagination/
+  Pagination.jsx
+  SearchBar/
+  SearchBar.jsx
+  SearchBar.module.css
+   SortSelection/
+   SortSelection.jsx
+   SortSelection.module.css
+   redux/
+   actionTypes.js
+   actions.js
+    reducer.js
+    store.js
    views/
  /About
  /Detail

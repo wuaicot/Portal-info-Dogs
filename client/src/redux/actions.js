@@ -1,19 +1,25 @@
-import axios from 'axios';
+import axios from 'axios';//la biblioteca de axios para hacer las solicitudes http a la API
 
-import { SORT_HEIGHT,GET_TEMPERAMENTS, GET_DOG, GET_DOGS, GET_DOG_BY_NAME, FILTER_BY_SOURCE, FILTER_BY_TEMPERAMENTS, SORT_NAME, SORT_WEIGHT, REMOVE_FILTERS, CLEAN_DOG_DETAILS, LOADING, CREATE_DOG, UPDATE_DOG, DELETE_DOG} from './actionTypes';
+import { SORT_HEIGHT,GET_TEMPERAMENTS, GET_DOG, GET_DOGS, GET_DOG_BY_NAME, FILTER_BY_SOURCE, FILTER_BY_TEMPERAMENTS, SORT_NAME, SORT_WEIGHT, REMOVE_FILTERS, CLEAN_DOG_DETAILS, LOADING, CREATE_DOG, UPDATE_DOG,  } from './actionTypes';//importamos los tipos de acciones (constantes) necesaros para este archivo.
 
 
-const SERVER_URL = 'http://localhost:3001';
+const SERVER_URL = 'http://localhost:3001';//definimos el path del servidor
+
+//definimos las diversas funciones asíncronas para hacer solicitudes API
 
 export const getDogs = () => {
     return async function(dispatch){
-        dispatch(({type:LOADING}));
+        //llamamos funcion y desencadenamos la acción de carga 
+        dispatch(({type:LOADING})); 
+         //llamamos a la API para pedirle info        
         const apiData = await axios.get(`${SERVER_URL}/dogs`);
+        //obtenemos la lista de perros 
         const dogs = apiData.data;
+         //despachamos asia el store
         dispatch({type:GET_DOGS, payload: dogs})
     }
 }
-
+  //tomamos del parametro id
 export const getDog = (id) => {
     return async function(dispatch){
         dispatch({type:LOADING});
@@ -22,7 +28,6 @@ export const getDog = (id) => {
         dispatch({type:GET_DOG, payload:dog})
     }
 }
-
 
 export const getDogByName =(name) =>{
     return async function (dispatch){
@@ -72,6 +77,7 @@ export function deleteDog(id) {
         }
     }
 }
+
 export const updateDog=(id)=>{
     return async function(dispatch){
         const update = (await axios.put(`${SERVER_URL}/dogs/${id}`))

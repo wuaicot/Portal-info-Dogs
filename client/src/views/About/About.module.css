@@ -3,9 +3,9 @@
     position:relative;
     margin-top:40px ;
     background: linear-gradient(to right, #ebbf60, #5c9fc1);
-    border-radius:1em;
+    border-radius: 13px;
     display: inline-block;
-    padding: 2em;
+    padding: 13px;
     
 }
 .titulo{  
@@ -18,11 +18,12 @@ font-weight: 500;
 .p{
 font-size:large;
 
-padding-bottom:13px ;
+
 
 }
 
 .containI{
+    margin-top: 13px;
     display: flex;
    justify-content: space-around;
     

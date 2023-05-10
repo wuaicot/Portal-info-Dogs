@@ -1,10 +1,10 @@
 import {SORT_HEIGHT, GET_DOGS, GET_DOG , CLEAN_DOG_DETAILS , CREATE_DOG, GET_DOG_BY_NAME,  GET_TEMPERAMENTS, LOADING, FILTER_BY_SOURCE, FILTER_BY_TEMPERAMENTS, REMOVE_FILTERS, SORT_NAME, SORT_WEIGHT, DELETE_DOG, UPDATE_DOG} from  './actionTypes';
 
 const initialState = {
-    dogs: [], //!DOGS WITH FILTERS
-    dogs_backup: [], //!ALL DOGS ALWAYS
-    dog_details: {},
-    temperaments: [],
+    dogs: [], //matriz con todos los perros filtrados
+    dogs_backup: [], //matriz con todos los perros disponibles
+    dog_details: {}, //Un objeto que representa los detalles de un perro.
+    temperaments: [],//matriz que contiene los temperamentos de los perros.
     loading: false,
 }
 
@@ -38,7 +38,9 @@ const reducer = (state=initialState, action) =>{
       case UPDATE_DOG:
             let id = action.payload.id;
            
-            return{...state, dogs: [...state.dogs.filter(dog=> dog.id !== id), action.payload], dogs: [...state.dogs_backup.filter(dog=> dog.id !== id), action.payload]  }
+            return{...state, dogs: [...state.dogs.filter(dog=> dog.id !== id), action.payload], dogs_backup: [...state.dogs_backup.filter(dog=> dog.id !== id), action.payload]}
+
+            
 
       case DELETE_DOG:
             return({
@@ -46,6 +48,7 @@ const reducer = (state=initialState, action) =>{
                 dogs: state.dogs.filter( breed => breed.id !== action.payload),
                 dogs_backup: state.dogs_backup.filter( breed => breed.id !== action.payload)
             })
+            
 
       case FILTER_BY_SOURCE:
            
