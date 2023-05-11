@@ -28,14 +28,14 @@ export const getDog = (id) => {
         dispatch({type:GET_DOG, payload:dog})
     }
 }
-
+//por nombre
 export const getDogByName =(name) =>{
     return async function (dispatch){
         const dog = (await axios.get(`${SERVER_URL}/dogs?name=${name}`)).data;
         dispatch({type: GET_DOG_BY_NAME, payload:dog})
     }
 }
-
+//buscamos los temperamentos
 export const getTemperaments = ()=>{
     return async function (dispatch){
         const temp = (await axios.get(`${SERVER_URL}/temperaments`)).data
