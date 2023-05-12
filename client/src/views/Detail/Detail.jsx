@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import style from './Detail.module.css';
 import Loading from "../../components/Loading/Loading";
 
+
 const Detail = () => {
 
     const dispatch = useDispatch();
@@ -12,10 +13,10 @@ const Detail = () => {
     const {id} = useParams();
 
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getDog(id));
-        return dispatch(cleanDogDetails())
-    },[id])
+        return () => dispatch(cleanDogDetails());
+      }, [dispatch, id]);
 
  console.log(dog_details);
     return(
@@ -23,7 +24,7 @@ const Detail = () => {
         <div>
                
               
-        <h1 className={style.h1}> Exploring Breed </h1>
+        <h1 className={style.h1}> Explorando Raza </h1>
        { loading ? <Loading/> :
          <div className={style.card}>
          

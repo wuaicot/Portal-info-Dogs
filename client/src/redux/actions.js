@@ -9,38 +9,56 @@ const SERVER_URL = 'http://localhost:3001';//definimos el path del servidor
 
 export const getDogs = () => {
     return async function(dispatch){
-        //llamamos funcion y desencadenamos la acción de carga 
-        dispatch(({type:LOADING})); 
+        //llamamos funcion y desencadenamos la acción de carga        
+        try{
+            dispatch(({type:LOADING})); 
          //llamamos a la API para pedirle info        
         const apiData = await axios.get(`${SERVER_URL}/dogs`);
         //obtenemos la lista de perros 
         const dogs = apiData.data;
          //despachamos asia el store
         dispatch({type:GET_DOGS, payload: dogs})
+        }catch (error) {
+             alert(error.message);
+          }
     }
-}
+} 
+
+
   //tomamos del parametro id
 export const getDog = (id) => {
     return async function(dispatch){
-        dispatch({type:LOADING});
+        try{
+            dispatch({type:LOADING});
         const apiData = await axios.get(`${SERVER_URL}/dogs/${id}`)
         const dog = apiData.data;
         dispatch({type:GET_DOG, payload:dog})
+        }catch (error) { 
+            alert(error.message)
     }
+ }
 }
 //por nombre
 export const getDogByName =(name) =>{
     return async function (dispatch){
-        const dog = (await axios.get(`${SERVER_URL}/dogs?name=${name}`)).data;
-        dispatch({type: GET_DOG_BY_NAME, payload:dog})
+        try{
+            const dog = (await axios.get(`${SERVER_URL}/dogs?name=${name}`)).data;
+            dispatch({type: GET_DOG_BY_NAME, payload:dog})
+        }catch (error) { 
+            alert(error.message)
+      }
     }
 }
 //buscamos los temperamentos
 export const getTemperaments = ()=>{
     return async function (dispatch){
+       try{
         const temp = (await axios.get(`${SERVER_URL}/temperaments`)).data
-        dispatch({type: GET_TEMPERAMENTS, payload: temp})    
+        dispatch({type: GET_TEMPERAMENTS, payload: temp})   
+       } catch (error) { 
+        alert(error.message)
     }
+  }
 }
 
 export const cleanDogDetails = ()=>{
@@ -54,10 +72,10 @@ export const createDog = (form)=>{
         try{
             const create = (await axios.post(`${SERVER_URL}/dogs`, form)).data
              dispatch({type: CREATE_DOG, payload: create})
-    } catch(error){
-        alert(error.create)
+     } catch(error){
+        alert(error.message)
     }
-        }       
+  }       
     
 }
 
@@ -80,8 +98,12 @@ export function deleteDog(id) {
 
 export const updateDog=(id)=>{
     return async function(dispatch){
-        const update = (await axios.put(`${SERVER_URL}/dogs/${id}`))
-        dispatch({type:UPDATE_DOG, payload:update})
+        try{
+            const update = (await axios.put(`${SERVER_URL}/dogs/${id}`))
+           dispatch({type:UPDATE_DOG, payload:update})
+        }catch (e){
+            console.log(e.message);
+        }
     }
 }
 

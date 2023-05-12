@@ -1,3 +1,6 @@
+//creamos el componente para registrar una raza de perro
+
+//importamos con lo que vamos a interactuar
 import { useState , useEffect} from "react";
 import style from './Form.module.css';
 import { createDog, getTemperaments } from "../../redux/actions";
@@ -7,10 +10,13 @@ const Form = () => {
 
     const dispatch = useDispatch();
     const {dogs_backup, temperaments} = useSelector(state=>state)
-  
-    useEffect( () => { dispatch(getTemperaments())},[] );  
+    //obtenemos los temperamentos de la API
+    useEffect(() => {
+      dispatch(getTemperaments());
+      //redux|
+    }, [dispatch]);  //solo se ejecuta si dispatch cambia
 
-
+    //creamos un objeto que almacena los valores de los campos del formulario y se inicializa con un objeto vacío
     const [form, setForm] = useState({ 
         name:'',
         height_min:'',
@@ -22,7 +28,7 @@ const Form = () => {
         temperamentId: [],
         tempName: []
     })
-
+    // creamos un objeto que almacena los errores de validación del formulario y se inicializa con un objeto vacío.
     const [errors,setErrors] = useState({
         name:'',
         height_min:'',
@@ -67,20 +73,20 @@ const Form = () => {
           }
           const selectHandler = event=> {
             const id = event.target.value;
-            const selectedTemp = temperaments.find(t=> t.id == id)
+            const selectedTemp = temperaments.find(t=> t.id === id)
             setForm({...form, temperamentId:[...form.temperamentId, id], tempName:[...form.tempName, selectedTemp?.name]})    
          
            console.log(form.tempName);
           };
           
-          const deleteTemp = (index)=>{
-           const temperamentIdClean = [...form.temperamentId]
-           const tempNameClean = [...form.tempName]
-           tempNameClean.splice(index, 1);
-           temperamentIdClean.splice(index, 1);
-            setForm({...form, temperamentId:[temperamentIdClean], tempName:[tempNameClean]})
-            console.log(tempNameClean, temperamentIdClean);
-          }
+          // const deleteTemp = (index)=>{
+          //  const temperamentIdClean = [...form.temperamentId]
+          //  const tempNameClean = [...form.tempName]
+          //  tempNameClean.splice(index, 1);
+          //  temperamentIdClean.splice(index, 1);
+          //   setForm({...form, temperamentId:[temperamentIdClean], tempName:[tempNameClean]})
+          //   console.log(tempNameClean, temperamentIdClean);
+          // }
 
     const validate = (form) => {
         let nameRegex = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
@@ -106,24 +112,24 @@ const Form = () => {
            errors.name = " - El nombre de la raza es obligatorio";
          }
       
-        if (form.height_min.trim() && isNaN(form.height_min.trim()) || Number(form.height_min.trim()) > 100) {
-          
+         if ((form.height_min.trim() && isNaN(form.height_min.trim())) || Number(form.height_min.trim()) > 100) {
           errors.height_min = " - La altura mínima debe ser un número inferior a 100";
         }
+        
       
-        if (form.height_max.trim() && isNaN(form.height_max.trim()) || Number(form.height_max.trim()) > 100) {
+        if ((form.height_max.trim() && isNaN(form.height_max.trim())) || Number(form.height_max.trim()) > 100) {
           errors.height_max = " - La altura máxima debe ser un número inferior a 100";
         }
       
-        if (form.weight_min.trim() && isNaN(form.weight_min.trim()) || Number(form.weight_min.trim()) > 100) {
+        if ((form.weight_min.trim() && isNaN(form.weight_min.trim())) || Number(form.weight_min.trim()) > 100) {
           errors.weight_min = " - El peso mínimo debe ser un número inferior a 100";
         }
       
-        if (form.weight_max.trim() && isNaN(form.weight_max.trim()) || Number(form.weight_max.trim()) > 100) {
+        if ((form.weight_max.trim() && isNaN(form.weight_max.trim())) || Number(form.weight_max.trim()) > 100) {
           errors.weight_max = " - El peso máximo debe ser un número inferior a 100";
         }
       
-        if (form.life_span.trim() && isNaN(form.life_span.trim()) || Number(form.life_span.trim()) > 25) {
+        if ((form.life_span.trim() && isNaN(form.life_span.trim())) || Number(form.life_span.trim()) > 25) {
           errors.life_span = " - La esperanza de vida debe ser un número inferior a 25";
         }
       
