@@ -37,12 +37,14 @@ const getDogHandler = async (req,res)=>{
 
   //*POST : creamos un nuevo perro. Obtenemos los parámetros necesarios del boddy de la req
   const createDogHandler = async (req,res) => { 
+    console.log('Recibida solicitud para crear un nuevo perro:', req.body);
+
     const {name, height_min, height_max, weight_min, weight_max, life_span, image, temperamentId} = req.body;
     try{
        //crea un nuevo perro en la bdd
-      const newDog = await createDog(name,height_min, height_max, weight_min, weight_max, life_span, image, temperamentId);
-       //devuelve un JSON o un mensaje de error
+      const newDog = await createDog(name,height_min, height_max, weight_min, weight_max, life_span, image, temperamentId);       
       res.status(201).json(newDog);
+      //devuelve un JSON o un mensaje de error
     }catch(error){
       res.status(400).json({ error: error.message });
     }

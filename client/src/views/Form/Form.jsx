@@ -50,27 +50,37 @@ const Form = () => {
 
     
     const submitHandler = (e) => {
-            e.preventDefault();
-                
-            if (Object.keys(errors).some(key => errors[key])) {
-              console.log('Debe corregir algún error');
-              alert('Debe completar todos los campos antes de continuar');
-              return;
-            }          
-            dispatch(createDog(form));
-            
-            alert("FELICIDADES! Su perro se ha creado correctamente");
-            setForm({
-              name:'',
-              height_min:'',
-              height_max:'',
-              weight_min:'',
-              weight_max:'',
-              life_span:'',
-              image:'',
-              temperamentId: ''
-            });
-          }
+      e.preventDefault();
+    
+      let urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+    
+      if (!form.name || (!form.height_min && !form.height_max) || (!form.weight_min && !form.weight_max) || !form.life_span) {
+        console.log('Debe corregir algún error');
+        alert('Debe completar todos los campos obligatorios antes de continuar');
+        return;
+      } else if (form.image && !urlRegex.test(form.image)) {
+        console.log('Debe corregir algún error');
+        alert('La URL de la imagen no es válida');
+        return;
+      }
+    
+      dispatch(createDog(form));
+    
+      alert('¡FELICIDADES! Su perro se ha creado correctamente');
+    
+      setForm({
+        name: '',
+        height_min: '',
+        height_max: '',
+        weight_min: '',
+        weight_max: '',
+        life_span: '',
+        image: '',
+        temperamentId: ''
+      });
+    };
+    
+
           const selectHandler = event=> {
             const id = event.target.value;
             const selectedTemp = temperaments.find(t=> t.id === id)
@@ -89,7 +99,8 @@ const Form = () => {
           // }
 
     const validate = (form) => {
-        let nameRegex = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
+        let urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+        let nameRegex = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;        
         let errors = {};
         let nameExists = false;
   
@@ -144,6 +155,14 @@ const Form = () => {
           if (!form.life_span) {
             errors.life_span = "- La vida útil es obligatoria";
           }
+          if (form.image && form.image.length > 400) {
+            errors.image = " - La URL de la imagen debe tener como máximo 400 caracteres";
+          } else if (form.image && !urlRegex.test(form.image)) {
+            errors.image = " - La URL de la imagen no es válida";
+          } else if (!form.image) {
+            errors.image = " - La URL de la imagen es requerida";
+          }
+          
       
         return errors;
       };

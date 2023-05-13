@@ -36,9 +36,9 @@ export default function Pagination({
       if (event.keyCode === 37) prevPage(currentPage);
       if (event.keyCode === 39) nextPage(currentPage);
     };
-
+    //añadimos el manejador de evenos en la ventana
     window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
+     return () => window.removeEventListener("keydown", handleKey);
   }, [currentPage, nextPage, prevPage]);
 
   return (

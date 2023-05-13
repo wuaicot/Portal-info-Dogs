@@ -72,12 +72,13 @@ export const createDog = (form)=>{
         try{
             const create = (await axios.post(`${SERVER_URL}/dogs`, form)).data
              dispatch({type: CREATE_DOG, payload: create})
-     } catch(error){
-        alert(error.message)
+            }catch (error) { 
+                alert(error.message)
+            }
     }
   }       
     
-}
+
 
 export function deleteDog(id) {
     return async function(dispatch){
