@@ -25,7 +25,8 @@ const About = () => {
         <div className={style.div}>
           <div className={style.container}>
 
-            <h1 className={style.titulo}>PORTAL INFO-DOGS by Naycol R. Linares V</h1>
+            <h1 className={style.titulo}>PORTAL INFO-PERROS. by </h1>
+            <h1 className={style.titulodos}> Naycol R. Linares V.</h1>
             <p className={style.p} >Henry Academy - Individual Project: React, Redux, Node.js, Express y Sequelize-"psql". <br></br></p>
             <p>Este es mi proyecto personal para el BootcampHenry Development Fullstack, el cual consiste en desarrollar un info-portál conectando con información de una API externa. Podrás realizar búsquedas, crear, filtrar y ordenar tus raza de Perros favoritos.</p>
 

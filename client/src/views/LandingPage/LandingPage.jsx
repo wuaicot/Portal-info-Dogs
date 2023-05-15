@@ -18,7 +18,7 @@ const Landing = () => {
     return (
         <div className={style.container}>
           <div className={style.infoContainer}>
-            <h1 className={style.title}>PORTAL DOGS</h1>
+            <h1 className={style.title}>PORTAL PERROS</h1>
             <h2 className={style.subtitle}>Bienvenido/a</h2>
             <ul className={style.features}>
               <li>Aquí podras buscar perros por su raza.</li>

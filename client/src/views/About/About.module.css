@@ -11,8 +11,9 @@
 .titulo{  
 /* font-size:xx-large; */
 margin-top:-20px;
-text-shadow: 2px 2px 5px #999;
+text-shadow: 3px 3px 8px #e7e5e5;
 font-weight: 500;
+color: rgb(18, 18, 54);
 
 }
 .p{

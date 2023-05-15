@@ -89,9 +89,18 @@ Card.jsx
 
 
  URL MOLLY: https://bit.ly/3o6aPWh
+            http://bit.ly/3o6aPWh?=qr
 
 
+  URL TRIXI : http://bit.ly/42u9dhm?r=qr
+               https://bit.ly/42U9dhm
 
 
+ URL AURE:  https://bit.ly/42NNmbP
 
- URL AURE:
+
+ HALANA:  https://bit.ly/3If6xTw
+
+ 
+ 
+ ARTHUR:  https://bit.ly/3W4rcza

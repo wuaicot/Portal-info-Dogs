@@ -5,6 +5,7 @@
     flex-direction: row;
     justify-content: space-around;
     border: 1px solid black;
+    box-shadow: 10px 10px 14px #000;
     border-radius: 15px;
     border-style:groove;
     background: linear-gradient(to right, #ebbf60, #5c9fc1);

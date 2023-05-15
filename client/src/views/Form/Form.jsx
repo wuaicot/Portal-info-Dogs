@@ -89,14 +89,7 @@ const Form = () => {
            console.log(form.tempName);
           };
           
-          // const deleteTemp = (index)=>{
-          //  const temperamentIdClean = [...form.temperamentId]
-          //  const tempNameClean = [...form.tempName]
-          //  tempNameClean.splice(index, 1);
-          //  temperamentIdClean.splice(index, 1);
-          //   setForm({...form, temperamentId:[temperamentIdClean], tempName:[tempNameClean]})
-          //   console.log(tempNameClean, temperamentIdClean);
-          // }
+          
 
     const validate = (form) => {
         let urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
@@ -245,13 +238,3 @@ const Form = () => {
 }
 
 export default Form;
-/*  <ul>
-                 {form.tempName?.map((name, index)=>{
-                  return(
-                    <li key= {index}>{name}
-                    <button onClick={deleteTemp(index)}>X</button>
-                    </li>
-                  )
-                 })}
-                 
-                </ul>*/

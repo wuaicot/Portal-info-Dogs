@@ -8,10 +8,10 @@ const NavBar = () => {
     //creamos los enlaces
     return(
         <div className={style.mainContainer}>
-            <Link to='/'>PRINCIPAL</Link>
-            <Link to='/home'>HOME</Link>
+            <Link to='/'>INICIO</Link>
+            <Link to='/home'>PRINCIPAL</Link>
             <Link to='/create'>REGISTRA TU PERRO </Link>
-            <Link to='/about'>ESTA PAGINA.</Link>
+            <Link to='/about'>INFO.</Link>
         </div>
     )
 }
