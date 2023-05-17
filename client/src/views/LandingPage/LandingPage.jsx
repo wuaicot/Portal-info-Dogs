@@ -14,6 +14,8 @@ const Landing = () => {
         'https://images.pexels.com/photos/4588435/pexels-photo-4588435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       ]; 
 
+      
+
 
     return (
         <div className={style.container}>
@@ -40,7 +42,7 @@ const Landing = () => {
           <Link to="/home" className={style.link}>
             <div className={style.imageContainer}>
               {dogImages.map((dogImage, index) => (
-                <img key={index} src={dogImage} alt="perritos"></img>
+                <img key={index} src={dogImage} alt="foto perritos"></img>
               ))}
             </div>
           </Link>

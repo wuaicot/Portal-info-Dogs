@@ -31,7 +31,7 @@ const Card = (props) => {
             </div>
                 
             <p className={style.image}>
-                {props.image}
+                {props.image} 
             </p>
             
         </div>

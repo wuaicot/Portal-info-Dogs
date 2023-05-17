@@ -4,19 +4,26 @@ import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 
 const Filters = ()=>{
+    //accedemos al estado
     const dispatch = useDispatch();  
+    //realizamos la accion de acceder a los temperamentos
     const {temperaments } = useSelector((state)=> state)
-     //filtramos perros segun temperamento elejido
-    function handlerFilterByTemperament(e){      
+     //controlamos los  eventos que ocurren en el selector de temperamentos.     
+    function handlerFilterByTemperament(e){      //se llama a dispatch con la acción, pasando |  lo que se seleccionó como argumento.
         dispatch(filterByTemperaments(e.target.value)); 
       }
       // filtramos según origen BDD/API.
+      //controlamos los cambios de eventos que ocurren en el selector origen
      function handlerFilterByCreated(e) {
+        //se llama a dispatch con la accion y el argumento 
         dispatch(filterBySource(e.target.value));
      }
         //borramos filtros y que se muestren todos los perros
+        //manejamos eventos del boton "borrar filtros"
      function handleClick(){
+         //al hacer clic realizamos una manipulacion del DOM establecer los selectores a "all"
         document.getElementById('sourceSelector').value='all';
+        // se llama a dispatch con la acción para borrar
         document.getElementById('tempSelector').value='all';
         dispatch(removeFilters());
     }

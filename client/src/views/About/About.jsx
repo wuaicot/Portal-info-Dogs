@@ -37,7 +37,7 @@ const About = () => {
             <FontAwesomeIcon  icon={faLinkedin}className={style.Ilkd}onClick={()=>{window.open('https://www.linkedin.com/in/rodolfo-linares-4066b724b/')}}/>{' '}
             <FontAwesomeIcon icon={faGithub}className={style.Igith} onClick={()=>{window.open('https://github.com/wuaicot')}}/>{' '}
             <FontAwesomeIcon icon={faInstagram}className={style.Iinst} onClick={()=>{window.open('https://www.instagram.com/holasoymoolly/')}}/>{' '}
-            <FontAwesomeIcon icon={faFacebook}className={style.Imeta} onClick={()=>{window.open('https://www.facebook.com/rodolfo-linares')}}/>{' '}
+            <FontAwesomeIcon icon={faFacebook}className={style.Imeta} onClick={()=>{window.open('https://www.facebook.com/')}}/>{' '}
             </div>
 
             </h2>

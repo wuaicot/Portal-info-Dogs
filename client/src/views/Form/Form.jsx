@@ -92,6 +92,7 @@ const Form = () => {
           
 
     const validate = (form) => {
+        //verificamos el grupo de caracteres validos
         let urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
         let nameRegex = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;        
         let errors = {};
@@ -148,19 +149,23 @@ const Form = () => {
           if (!form.life_span) {
             errors.life_span = "- La vida útil es obligatoria";
           }
-          if (form.image && form.image.length > 400) {
-            errors.image = " - La URL de la imagen debe tener como máximo 400 caracteres";
-          } else if (form.image && !urlRegex.test(form.image)) {
+
+           //nos aseguramos de que sea una url valida
+           if (!urlRegex.test(form.image)) {
             errors.image = " - La URL de la imagen no es válida";
-          } else if (!form.image) {
-            errors.image = " - La URL de la imagen es requerida";
           }
+
+
+          
+          
           
       
         return errors;
       };
       
 
+
+        //renderizamos
     return(
         <form onSubmit={submitHandler} className={style.formContainer}>
             <div className={style.box}>
@@ -212,7 +217,7 @@ const Form = () => {
 
            
             <div>
-                <label>Imágen: </label>
+                <label>Url Imágen: </label>
                 <input type='text' name='image' value={form.image} onChange={changeHandler}></input>
             </div>
             <div>
@@ -231,7 +236,7 @@ const Form = () => {
            
                 
             </div>
-            <button className={style.button} type='submit'>GUARDAR</button>
+            <button className={style.button} type='submit'>CREAR</button>
             
         </form>
     )

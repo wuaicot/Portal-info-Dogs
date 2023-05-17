@@ -28,6 +28,7 @@ const getDogHandler = async (req,res)=>{
        //devolvemos una respuesta 200 y el perro obtenido en un formato JSON o 400
       const dog = await getDogById(id);
       res.status(200).json(dog);
+       //tomamos el manejo de error y devolvemos un objeto
     }catch(error){
       res.status(400).json({ error: error.message })
     }

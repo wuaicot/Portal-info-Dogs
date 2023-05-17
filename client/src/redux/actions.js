@@ -60,19 +60,22 @@ export const getTemperaments = ()=>{
     }
   }
 }
-
+// limpiamos lista de detalles
 export const cleanDogDetails = ()=>{
     return({type:CLEAN_DOG_DETAILS})
-}
+}//cargando
 export const setLoading = ()=>{
     return({type:LOADING})
 }
+
+//creamos un perro, si algo rompe  manejamos el error con el try-catch
 export const createDog = (form)=>{
     return async function(dispatch){
         try{
             const create = (await axios.post(`${SERVER_URL}/dogs`, form)).data
              dispatch({type: CREATE_DOG, payload: create})
-            }catch (error) { 
+             //mostramos un alert en el navegador
+         }catch (error) { 
                 alert(error.message)
             }
     }
