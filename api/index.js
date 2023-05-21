@@ -20,10 +20,17 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
-// Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  //se define el servidor de Node.js.
-  server.listen(3001, () => {
-    console.log('%s AURELIO listening at 3001'); // eslint-disable-line no-console
+const port = process.env.PORT || 3001;
+
+conn.authenticate()
+  .then(() => {
+    console.log('Connection to the database has been established successfully.');
+
+    server.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Unable to connect to the database:', err);
   });
-});
+
