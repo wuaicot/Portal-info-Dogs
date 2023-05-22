@@ -1,4 +1,6 @@
-/api
+Portal-info-Dogs:
+
+api/
 /node_modules
 src/
   controllers/
