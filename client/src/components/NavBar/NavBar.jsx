@@ -15,5 +15,5 @@ const NavBar = () => {
         </div>
     )
 }
-  // el componente
+  
 export default NavBar;
