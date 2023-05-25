@@ -14,7 +14,7 @@ const Home = () => {
         <>
         <div className={style.header}>
 
-             <h1 className={style.tittle}> BUSCA TU RAZA FAVORITA </h1>
+             <h1 className={style.tittle}> BUSCA / CREA TU RAZA FAVORITA </h1>
 
              <div className={style.buttons}>
               <div className={style.search}> 
