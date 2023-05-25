@@ -8,9 +8,9 @@ const NavBar = () => {
     //creamos los enlaces
     return(
         <div className={style.mainContainer}>
-            <Link to='/'>INICIO  |</Link>
-            <Link to='/home'>GENERAL |</Link>
-            <Link to='/create'>REGISTRA TU PERRO |</Link>
+            <Link to='/'>INICIO|</Link>
+            <Link to='/home'>GENERAL|</Link>
+            <Link to='/create'>REGISTRA TU PERRO|</Link>
             <Link to='/about'>INFO.</Link>
         </div>
     )
