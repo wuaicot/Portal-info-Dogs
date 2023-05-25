@@ -23,10 +23,10 @@ const Landing = () => {
             <h1 className={style.title}>PORTAL PERRITOS</h1>
             <h2 className={style.subtitle}>Bienvenido/a</h2>
             <ul className={style.features}>
-              <li>Aquí podras buscar perros por su raza.</li>
-              <li>Visualizar la información de los perros.</li>
+              <li>Aquí podras buscar  por su raza.</li>
+              <li>Visualizar la información.</li>
               <li>Filtrar y ordenar búsqueda.</li>
-              <li>Registrar nuevos perros.</li>
+              <li>Registrar nuevos perritos.</li>
             </ul>
                 <br></br>
                              
