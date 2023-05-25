@@ -63,6 +63,10 @@ h1 {
     font-weight: bold;
     margin: 15px 0px;
     text-align: center;
+    color: rgb(184, 222, 12);
+    text-shadow: 4px 4px 4px black;
+    
+    
 }
 
 h2 {
@@ -70,7 +74,9 @@ h2 {
     font-weight: bold;
     margin: 10px 0;
     text-align: center;
-    color: rgb(0, 0, 17);
+    color: rgb(171, 238, 3);
+    text-shadow: 4px 4px 4px black;
+    
 }
 
 h3 {
