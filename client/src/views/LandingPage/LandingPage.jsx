@@ -35,9 +35,7 @@ const Landing = () => {
            'https://i.ibb.co/b2PNddW/Diablatrixi.jpg'
         // 'https://images.pexels.com/photos/4588435/pexels-photo-4588435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 
-      ]; 
-
-      
+      ];      
 
 
     return (
@@ -59,7 +57,7 @@ const Landing = () => {
           <br></br>
           <br></br> 
 
-          <div ><h4 className={style.hasclic}>TOCA CUALQUIER PERRITO PARA ENTRAR.</h4></div>
+          <div ><h4 className={style.hasclic}>TOCA CUALQUIER PERRITO PARA ENTRAR</h4></div>
 
 
           <Link to="/home" className={style.link}>
