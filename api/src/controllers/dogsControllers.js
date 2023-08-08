@@ -22,7 +22,7 @@ const cleanArray = (arr) =>
   const transformedDogs = (arr) => {
     return arr.map(dog => {
       const temperamentNames = dog.Temperaments.map(temp => temp.name);
-      const temperamentString = temperamentNames.join(', ');
+      const temperamentString = temperamentNames.join(',');
       const { Temperaments, ...rest } = dog.toJSON(); 
       return { ...rest, temperaments: temperamentString };
     });
