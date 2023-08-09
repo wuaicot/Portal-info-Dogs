@@ -1,4 +1,0 @@
-./Portal-info-Dogs/
-  ├── api/
-  └── client/
-  -.gitignore
