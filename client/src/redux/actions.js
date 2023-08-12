@@ -3,8 +3,8 @@ import axios from 'axios';//la biblioteca de axios para hacer las solicitudes ht
 import { SORT_HEIGHT,GET_TEMPERAMENTS, GET_DOG, GET_DOGS, GET_DOG_BY_NAME, FILTER_BY_SOURCE, FILTER_BY_TEMPERAMENTS, SORT_NAME, SORT_WEIGHT, REMOVE_FILTERS, CLEAN_DOG_DETAILS, LOADING, CREATE_DOG, UPDATE_DOG,  } from './actionTypes';//importamos los tipos de acciones (constantes) necesaros para este archivo.
 
 
-const SERVER_URL = 'https://portal-info-dogs-cd7p0gz1d-wuaicot.vercel.app/';//definimos el path del servidor
-
+const SERVER_URL = 'http://localhost:3001';
+   //'https://info-dog-backend-acca4ff60e0d.herokuapp.com/';
 //definimos las diversas funciones asíncronas para hacer solicitudes API
 
 export const getDogs = () => {
