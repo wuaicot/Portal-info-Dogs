@@ -20,8 +20,7 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
-const PORT = process.env.PORT;
-//|| 3005;
+const PORT = process.env.PORT || 3005;
 
 conn.authenticate()
   .then(() => {
