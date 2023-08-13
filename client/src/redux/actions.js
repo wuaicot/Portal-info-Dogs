@@ -14,7 +14,7 @@ export const getDogs = () => {
         try{
             dispatch(({type:LOADING})); 
          //llamamos a la API para pedirle info        
-        const apiData = await axios.get(`${SERVER_URL}/dogs`);
+        const apiData = await axios.get(`${SERVER_URL}`);///dogs
         //obtenemos la lista de perros 
         const dogs = apiData.data;
          //despachamos asia el store
