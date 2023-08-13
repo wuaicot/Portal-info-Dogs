@@ -8,7 +8,7 @@ const SERVER_URL = 'http://localhost:3001';
    //'https://info-dog-backend-acca4ff60e0d.herokuapp.com/';
 //definimos las diversas funciones asíncronas para hacer solicitudes API
 
-export const getDogs = () => {git 
+export const getDogs = () => { 
     return async function(dispatch){
         //llamamos funcion y desencadenamos la acción de carga        
         try{
