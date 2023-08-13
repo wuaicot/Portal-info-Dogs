@@ -1,13 +1,14 @@
-import axios from 'axios';//la biblioteca de axios para hacer las solicitudes http a la API
+import axios from 'axios';
 
 import { SORT_HEIGHT,GET_TEMPERAMENTS, GET_DOG, GET_DOGS, GET_DOG_BY_NAME, FILTER_BY_SOURCE, FILTER_BY_TEMPERAMENTS, SORT_NAME, SORT_WEIGHT, REMOVE_FILTERS, CLEAN_DOG_DETAILS, LOADING, CREATE_DOG, UPDATE_DOG,  } from './actionTypes';//importamos los tipos de acciones (constantes) necesaros para este archivo.
 
 
 const SERVER_URL = 'http://localhost:3001';
+   //'http://localhost:3001'
    //'https://info-dog-backend-acca4ff60e0d.herokuapp.com/';
 //definimos las diversas funciones asíncronas para hacer solicitudes API
 
-export const getDogs = () => {
+export const getDogs = () => {git 
     return async function(dispatch){
         //llamamos funcion y desencadenamos la acción de carga        
         try{
