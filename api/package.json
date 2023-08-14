@@ -4,8 +4,8 @@
   "description": "este es el backend",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "react-scripts build",
+    "build": "node index.js",
+    
     "test": "mocha -w ./tests/**/*.spec.js"
   },
   "author": "Henry",
