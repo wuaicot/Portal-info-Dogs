@@ -3,9 +3,9 @@ import axios from 'axios';
 import { SORT_HEIGHT,GET_TEMPERAMENTS, GET_DOG, GET_DOGS, GET_DOG_BY_NAME, FILTER_BY_SOURCE, FILTER_BY_TEMPERAMENTS, SORT_NAME, SORT_WEIGHT, REMOVE_FILTERS, CLEAN_DOG_DETAILS, LOADING, CREATE_DOG, UPDATE_DOG,  } from './actionTypes';//importamos los tipos de acciones (constantes) necesaros para este archivo.
 
 
-const SERVER_URL = 'http://localhost:3005';
+const SERVER_URL = 'https://portal-info-dogs-oxj3-ooww7sdfr-wuaicot.vercel.app/';
    //'http://localhost:3001'
-   //'https://db-portafolio-da6717d3fd5f.herokuapp.com/'
+   
    
 //definimos las diversas funciones asíncronas para hacer solicitudes API
 
