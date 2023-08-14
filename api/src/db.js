@@ -5,16 +5,17 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 
 const path = require('path');
+
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT 
+  POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DATABASE, POSTGRES_HOST
 } = process.env;
 
 //ORM- creamos instancia de sequelize | cadena de conexión
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
+const sequelize = new Sequelize(`postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_DATABASE}`, {
   dialect: 'postgres',
   protocol: 'postgres',
   dialectOptions: {
-    ssl: { require: true },
+    ssl: { require: false },
   },
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
@@ -56,5 +57,5 @@ module.exports = {
   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
 };
 
-
+//const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`
 
