@@ -10,16 +10,9 @@ const {
   DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, DB_PORT
 } = process.env;
 
-//ORM- creamos instancia de sequelize | cadena de conexión
+
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
-  dialect: 'postgres',
-  protocol: 'postgres',
-  dialectOptions: {
-    ssl: {
-      require: false, // Cambiar a true para requerir SSL
-      
-    },
-  },
+  
   logging: false,
   native: false,
 });
@@ -63,3 +56,11 @@ module.exports = {
 
 //const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`
 
+// dialect: 'postgres',
+//   protocol: 'postgres',
+//   dialectOptions: {
+//     ssl: {
+//       require: false, // Cambiar a true para requerir SSL
+      
+//     }
+//   },
