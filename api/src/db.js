@@ -12,11 +12,11 @@ const {
 
 //ORM- creamos instancia de sequelize | cadena de conexión
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
-  dialect: 'postgres',
-  protocol: 'postgres',
-  dialectOptions: {
-    ssl: { require: true },
-  },
+  // dialect: 'postgres',
+  // protocol: 'postgres',
+  // dialectOptions: {
+  //   ssl: { require: true },
+  // },
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });

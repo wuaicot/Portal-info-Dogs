@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
 const cors = require ('cors');
-require("dotenv").config();
+//require("dotenv").config();
 //const { CORS_URL } = process.env;
 require('./db.js');
 
