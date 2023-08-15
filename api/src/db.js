@@ -15,11 +15,15 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
   dialect: 'postgres',
   protocol: 'postgres',
   dialectOptions: {
-    ssl: { require: false },
+    ssl: {
+      require: true, // Cambiar a true para requerir SSL
+      rejectUnauthorized: false, // Permitir certificados autofirmados
+    },
   },
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  logging: false,
+  native: false,
 });
+
 
 
 //para filtrar los archivos que contienen los modelos de Sequelize y requerirlos dinámicamente.
