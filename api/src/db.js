@@ -11,22 +11,7 @@ const {
 } = process.env;
 
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
-
-    dialect: 'postgres',
-   protocol: 'postgres',
-    dialectOptions: {
-
-      ssl: {
-        require: false, // Cambiar a true para requerir SSL
-    
-       }
-     },
-  
-  logging: false,
-  native: false,
-});
-
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`);
 
 //para filtrar los archivos que contienen los modelos de Sequelize y requerirlos dinámicamente.
 const basename = path.basename(__filename);
@@ -73,3 +58,21 @@ module.exports = {
       
 //     }
 //   },
+
+// {
+
+
+
+//   dialect: 'postgres',
+//  protocol: 'postgres',
+//   dialectOptions: {
+
+//     ssl: {
+//       require: false, // Cambiar a true para requerir SSL
+  
+//      }
+//    },
+
+// logging: false,
+// native: false,
+// });
