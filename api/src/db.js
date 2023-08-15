@@ -17,7 +17,7 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
   dialectOptions: {
     ssl: {
       require: true, // Cambiar a true para requerir SSL
-      rejectUnauthorized: false, // Permitir certificados autofirmados
+      rejectUnauthorized: true, // Permitir certificados autofirmados
     },
   },
   logging: false,
