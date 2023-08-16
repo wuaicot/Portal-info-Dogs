@@ -10,14 +10,18 @@ const {
   DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, DB_PORT
 } = process.env;
 
+const sslOptions = process.env.NODE_ENV === 'production' ? {
+  rejectUnauthorized: true, // This is the default behavior in production
+} : {
+  rejectUnauthorized: false, // Trust self-signed certificates in development
+};
+
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
   dialect: 'postgres',
   protocol: 'postgres',
   dialectOptions: {
-    ssl: {
-      require: false,
-    },
+    ssl: sslOptions,
   },
   logging: false,
   native: false,
