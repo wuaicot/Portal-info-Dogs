@@ -18,11 +18,7 @@ const sslOptions = process.env.NODE_ENV === 'production' ? {
 
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
-  dialect: 'postgres',
-  protocol: 'postgres',
-  dialectOptions: {
-    ssl: sslOptions,
-  },
+  
   logging: false,
   native: false,
 });
