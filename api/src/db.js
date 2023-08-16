@@ -11,7 +11,7 @@ const {
 } = process.env;
 
 const sslOptions = process.env.NODE_ENV === 'production' ? {
-  rejectUnauthorized: false, // This is the default behavior in production
+  rejectUnauthorized: true, // This is the default behavior in production
 } : {
   rejectUnauthorized: false, // Trust self-signed certificates in development
 };
