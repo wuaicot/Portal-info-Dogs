@@ -1,22 +1,19 @@
 import axios from 'axios';
 
-import { SORT_HEIGHT,GET_TEMPERAMENTS, GET_DOG, GET_DOGS, GET_DOG_BY_NAME, FILTER_BY_SOURCE, FILTER_BY_TEMPERAMENTS, SORT_NAME, SORT_WEIGHT, REMOVE_FILTERS, CLEAN_DOG_DETAILS, LOADING, CREATE_DOG, UPDATE_DOG,  } from './actionTypes';//importamos los tipos de acciones (constantes) necesaros para este archivo.
+import { SORT_HEIGHT,GET_TEMPERAMENTS, GET_DOG, GET_DOGS, GET_DOG_BY_NAME, FILTER_BY_SOURCE, FILTER_BY_TEMPERAMENTS, SORT_NAME, SORT_WEIGHT, REMOVE_FILTERS, CLEAN_DOG_DETAILS, LOADING, CREATE_DOG, UPDATE_DOG,  } from './actionTypes';
 
 
-const SERVER_URL = 'https://portal-info-dogs-production.up.railway.app/temperaments';
+const SERVER_URL = 'https://portal-info-dogs-production.up.railway.app/';
    
-//definimos las diversas funciones asíncronas para hacer solicitudes API
+
 
 export const getDogs = () => { 
     return async function(dispatch){
-        //llamamos funcion y desencadenamos la acción de carga        
+                
         try{
             dispatch(({type:LOADING})); 
-         //llamamos a la API para pedirle info        
         const apiData = await axios.get(`${SERVER_URL}/dogs`);
-        //obtenemos la lista de perros 
         const dogs = apiData.data;
-         //despachamos asia el store
         dispatch({type:GET_DOGS, payload: dogs})
         }catch (error) {
              alert(error.message);
@@ -25,7 +22,6 @@ export const getDogs = () => {
 } 
 
 
-  //tomamos del parametro id
 export const getDog = (id) => {
     return async function(dispatch){
         try{
@@ -38,7 +34,6 @@ export const getDog = (id) => {
     }
  }
 }
-//por nombre
 export const getDogByName =(name) =>{
     return async function (dispatch){
         try{
@@ -49,7 +44,6 @@ export const getDogByName =(name) =>{
       }
     }
 }
-//buscamos los temperamentos
 export const getTemperaments = ()=>{
     return async function (dispatch){
        try{
@@ -60,21 +54,19 @@ export const getTemperaments = ()=>{
     }
   }
 }
-// limpiamos lista de detalles
 export const cleanDogDetails = ()=>{
     return({type:CLEAN_DOG_DETAILS})
-}//cargando
+}
 export const setLoading = ()=>{
     return({type:LOADING})
 }
 
-//creamos un perro, si algo rompe  manejamos el error con el try-catch
+
 export const createDog = (form)=>{
     return async function(dispatch){
         try{
             const create = (await axios.post(`${SERVER_URL}/dogs`, form)).data
              dispatch({type: CREATE_DOG, payload: create})
-             //mostramos un alert en el navegador
          }catch (error) { 
                 alert(error.message)
             }
