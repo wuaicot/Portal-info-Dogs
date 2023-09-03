@@ -6,18 +6,28 @@ const fs = require('fs');
 
 const path = require('path');
 
-const {
-  DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, DB_PORT
-} = process.env;
+// const {
+//   DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, DB_PORT
+// } = process.env;
 
 
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
+// const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
+//   dialect: 'postgres',
+//   protocol: 'postgres',  
+//   logging: false,
+//   native: false,
+// });
+
+const { DATABASE_URL } = process.env;
+
+const sequelize = new Sequelize(DATABASE_URL, {
   dialect: 'postgres',
-  protocol: 'postgres',  
+  protocol: 'postgres',
   logging: false,
   native: false,
 });
+
 
 //para filtrar los archivos que contienen los modelos de Sequelize y requerirlos dinámicamente.
 const basename = path.basename(__filename);
