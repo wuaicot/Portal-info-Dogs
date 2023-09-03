@@ -4,9 +4,6 @@ import { SORT_HEIGHT,GET_TEMPERAMENTS, GET_DOG, GET_DOGS, GET_DOG_BY_NAME, FILTE
 
 
 const SERVER_URL = 'http://localhost:3001';
-   //'http://localhost:3001'
-   //https://portal-info-dogs.vercel.app/
-   //https://backend-portal-infodogs-62839606732a.herokuapp.com/
    
 //definimos las diversas funciones asíncronas para hacer solicitudes API
 
