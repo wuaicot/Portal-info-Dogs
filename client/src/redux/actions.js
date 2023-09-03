@@ -12,7 +12,7 @@ export const getDogs = () => {
                 
         try{
             dispatch(({type:LOADING})); 
-        const apiData = await axios.get(`${SERVER_URL}/dogs`);
+         const apiData = await axios.get((`${SERVER_URL}/dogs`));
         const dogs = apiData.data;
         dispatch({type:GET_DOGS, payload: dogs})
         }catch (error) {
@@ -26,7 +26,7 @@ export const getDog = (id) => {
     return async function(dispatch){
         try{
             dispatch({type:LOADING});
-        const apiData = await axios.get(`${SERVER_URL}/dogs/${id}`)
+        const apiData = await axios.get((`${SERVER_URL}/dogs/${id}`))
         const dog = apiData.data;
         dispatch({type:GET_DOG, payload:dog})
         }catch (error) { 
@@ -78,7 +78,7 @@ export const createDog = (form)=>{
 export function deleteDog(id) {
     return async function(dispatch){
         try{
-            await axios.delete(`${SERVER_URL}/dogs/${id}`)
+            await axios.delete((`${SERVER_URL}/dogs/${id}`))
             return (
                 dispatch({
                         type: "DELETE_DOG",
@@ -95,7 +95,7 @@ export function deleteDog(id) {
 export const updateDog=(id)=>{
     return async function(dispatch){
         try{
-            const update = (await axios.put(`${SERVER_URL}/dogs/${id}`))
+            const update = (await axios.put(`${SERVER_URL}/dogs ${id}`))
            dispatch({type:UPDATE_DOG, payload:update})
         }catch (e){
             console.log(e.message);
