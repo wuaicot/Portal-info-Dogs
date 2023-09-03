@@ -9,15 +9,12 @@ const cors = require ('cors');
 //const { CORS_URL } = process.env;
 require('./db.js');
 
-////////////////////////////////////////*  SERVER: 
 
 const server = express();
 
 server.name = 'API';
 
-//////////////////////////////////////*   MIDDLEWARE: 
-// .use para aplicar un middleware a todas las peticiones que LLEGAN AL servidor.
-// El middleware es bodyParser que analiza el cuerpo de las peticiones y lo convierte en un objeto JavaScript accesible desde req.body
+
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 server.use(bodyParser.json({ limit: '50mb' }));
 server.use(cookieParser());
@@ -30,11 +27,11 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use(cors()); //se puede permitir o restringir el acceso a la API desde otros dominios o servidores (cors es un middleware)
+server.use(cors()); 
 server.use('/', routes);
 
 // Error catching endware.
-server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+server.use((err, req, res, next) => { 
   const status = err.status || 500;
   const message = err.message || err;
   console.error(err);
