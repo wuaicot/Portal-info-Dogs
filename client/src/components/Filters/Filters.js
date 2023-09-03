@@ -7,7 +7,7 @@ const Filters = ()=>{
     //accedemos al estado
     const dispatch = useDispatch();  
     //realizamos la accion de acceder a los temperamentos
-    const {temperaments } = useSelector((state)=> state)
+    const { temperaments } = useSelector((state)=> state)
      //controlamos los  eventos que ocurren en el selector de temperamentos.     
     function handlerFilterByTemperament(e){      //se llama a dispatch con la acción, pasando |  lo que se seleccionó como argumento.
         dispatch(filterByTemperaments(e.target.value)); 
@@ -41,15 +41,19 @@ const Filters = ()=>{
                     <option value='api'>API</option>
                 </select>
             
-                <select  className={style.select}  id='tempSelector'  defaultValue="TEMP" onChange={handlerFilterByTemperament} >
-                <option disabled value='TEMP'>Filtrar Temperamento</option>
-                    <option value="all">Todo Temperamentos</option>
-                    {temperaments.map((temp 
-                        ) => (
-                        <option key={temp.id} value={temp.name}>{temp.name}</option>
-                        )
-                    )}
-               </select>
+                <select
+  className={style.select}
+  id='tempSelector'
+  defaultValue="TEMP"
+  onChange={handlerFilterByTemperament}
+>
+  <option disabled value='TEMP'>Filtrar Temperamento</option>
+  <option value="all">Todo Temperamentos</option>
+  {temperaments && temperaments.map((temp) => (
+    <option key={temp.id} value={temp.name}>{temp.name}</option>
+  ))}
+</select>
+
 
                <button className={style.button} onClick={handleClick}>Borrar Filtros</button>      
 
