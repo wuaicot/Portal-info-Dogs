@@ -41,18 +41,14 @@ const Filters = ()=>{
                     <option value='api'>API</option>
                 </select>
             
-                <select
-  className={style.select}
-  id='tempSelector'
-  defaultValue="TEMP"
-  onChange={handlerFilterByTemperament}
->
+                <select className={style.select} id='tempSelector' defaultValue="TEMP" onChange={handlerFilterByTemperament}>
   <option disabled value='TEMP'>Filtrar Temperamento</option>
   <option value="all">Todo Temperamentos</option>
   {temperaments && temperaments.map((temp) => (
     <option key={temp.id} value={temp.name}>{temp.name}</option>
   ))}
 </select>
+
 
 
                <button className={style.button} onClick={handleClick}>Borrar Filtros</button>      
