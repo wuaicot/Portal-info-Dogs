@@ -125,25 +125,4 @@ export const sortWeight = (payload)=>{
 
 export const sortHeight = (payload)=>{
     return({type: SORT_HEIGHT, payload})
-}Administrador@NRLV-EliteBook MINGW64 ~/OneEliteBook MINGW64 ~otCamp/Portal-info-Dogs/OneDrive/Escritorio/BootCamp/Portal-info-Dogs/api (main)
-
-$ npm start        
-
-> api@1.0.0 start  atabase has been establ
-> node index.js    
-                   n port 3001
-Connection to the database has been established successfully.
-Server is running on port 3001        
-OPTIONS /dogs 204 5.152 ms - 0        
-Recibida solicitud 
-para crear un nuevo perro: {
-  name: 'pruba doce',
-  height_min: '20',  height_max: '30',  weight_min: '5', 
-  weight_max: '10',  life_span: '20', 
-  image: 'https://w7.pngwing.com/pngs/601/175/png-transparent-dog-dog-png-pets-image-wild-life-thumbnail.png',    
-  temperamentId: [ 
-'12', '16', '10', '18', '15' ],       
-  tempName: [ null, null, null, null, 
-null ]
 }
-POST /dogs 201 395.603 ms - 243
