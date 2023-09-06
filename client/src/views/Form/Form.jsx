@@ -1,6 +1,3 @@
-//creamos el componente para registrar una raza de perro
-
-//importamos con lo que vamos a interactuar
 import { useState , useEffect} from "react";
 import style from './Form.module.css';
 import { createDog, getTemperaments } from "../../redux/actions";
@@ -81,13 +78,17 @@ const Form = () => {
     };
     
 
-          const selectHandler = event=> {
-            const id = event.target.value;
-            const selectedTemp = temperaments.find(t=> t.id === id)
-            setForm({...form, temperamentId:[...form.temperamentId, id], tempName:[...form.tempName, selectedTemp?.name]})    
-         
-           console.log(form.tempName);
-          };
+    const selectHandler = event => {
+      const id = event.target.value;
+      const selectedTemp = temperaments.find(t => t.id === id);
+      setForm({
+        ...form,
+        temperamentId: [...form.temperamentId, id],
+        tempName: [...form.tempName, selectedTemp?.name]
+      });
+    };
+    
+    
           
           
 

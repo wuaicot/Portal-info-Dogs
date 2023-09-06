@@ -44,7 +44,7 @@ export default function SortSelection (){
             </select>
 
             <select  className={style.select}  id='weightSort' name='weight' defaultValue='title' onChange={handleChange}>
-                <option n 
+                <option  
                 disabled value='title'>Ordenar por Peso
                 </option>
                 <option 
