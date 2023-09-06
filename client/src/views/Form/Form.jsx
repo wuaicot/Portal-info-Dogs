@@ -44,6 +44,7 @@ const Form = () => {
         setForm({...form, [property]:value})   
         setErrors(validate({...form, [event.target.name]:event.target.value})); 
     }   
+      
 
     
     const submitHandler = (e) => {
@@ -86,10 +87,8 @@ const Form = () => {
         temperamentId: [...form.temperamentId, id],
         tempName: [...form.tempName, selectedTemp?.name]
       });
-    };
-    
-    
-          
+      console.log(form.tempName);
+    };          
           
 
     const validate = (form) => {
@@ -154,12 +153,7 @@ const Form = () => {
            //nos aseguramos de que sea una url valida
            if (!urlRegex.test(form.image)) {
             errors.image = " - La URL de la imagen no es válida";
-          }
-
-
-          
-          
-          
+          }          
       
         return errors;
       };
