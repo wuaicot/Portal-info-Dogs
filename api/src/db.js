@@ -1,6 +1,6 @@
 // se establece la configuración de la bdd que utilizaremos para almacenar y recuperar los datos de la aplicación.
 require('dotenv').config();
-const { Sequelize } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 //para acceder a metodos y propiedades
 const fs = require('fs');
 
@@ -10,24 +10,17 @@ const {
   DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, DB_PORT
 } = process.env;
 
-
-
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
   dialect: 'postgres',
   protocol: 'postgres',  
-  logging: false,
+  logging: console.log,
   native: false,
 });
 
-// const { DATABASE_URL } = process.env;
-
-// const sequelize = new Sequelize(DATABASE_URL, {
-//   dialect: 'postgres',
-//   protocol: 'postgres',
-//   logging: false,
-//   native: false,
-// });
-
+// Autenticación de la base de datos
+sequelize.authenticate()
+  .then(() => console.log('Conexión establecida correctamente.'))
+  .catch(err => console.error('No se pudo conectar a la base de datos:', err));
 
 //para filtrar los archivos que contienen los modelos de Sequelize y requerirlos dinámicamente.
 const basename = path.basename(__filename);
@@ -41,8 +34,8 @@ fs.readdirSync(path.join(__dirname, '/models'))
     modelDefiners.push(require(path.join(__dirname, '/models', file)));
   });
 
-// Injectamos la conexion (sequelize) a todos los modelos
-modelDefiners.forEach(model => model(sequelize));
+// Injectamos la conexion (sequelize) y DataTypes a todos los modelos
+modelDefiners.forEach(model => model(sequelize, DataTypes));
 // Capitalizamos los nombres de los modelos ie: product => Product
 let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
@@ -59,36 +52,12 @@ const { Dogs, Temperaments } = sequelize.models;
 Dogs.belongsToMany(Temperaments, {through: 'DogsTemperaments'}); 
 Temperaments.belongsToMany(Dogs, {through: 'DogsTemperaments'});
 
+// Sincronización de la base de datos
+sequelize.sync()
+  .then(() => console.log('Base de datos sincronizada correctamente.'))
+  .catch(err => console.error('No se pudo sincronizar la base de datos:', err));
+
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
 };
-
-//const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`);
-
-// dialect: 'postgres',
-//   protocol: 'postgres',
-//   dialectOptions: {
-//     ssl: {
-//       require: false, // Cambiar a true para requerir SSL
-      
-//     }
-//   },
-
-// {
-
-
-
-//   dialect: 'postgres',
-//  protocol: 'postgres',
-//   dialectOptions: {
-
-//     ssl: {
-//       require: false, // Cambiar a true para requerir SSL
-  
-//      }
-//    },
-
-// logging: false,
-// native: false,
-// });
