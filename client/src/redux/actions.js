@@ -2,8 +2,8 @@ import axios from 'axios';
 
 import { SORT_HEIGHT,GET_TEMPERAMENTS, GET_DOG, GET_DOGS, GET_DOG_BY_NAME, FILTER_BY_SOURCE, FILTER_BY_TEMPERAMENTS, SORT_NAME, SORT_WEIGHT, REMOVE_FILTERS, CLEAN_DOG_DETAILS, LOADING, CREATE_DOG, UPDATE_DOG } from './actionTypes';
 
-
-const SERVER_URL = 'http://localhost:3001';
+        //'http://localhost:3001'
+const SERVER_URL = 'https://portal-info-dogs-production.up.railway.app';
 
 export const getDogs = () => {
     return async function(dispatch){
